@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Nonaym Landing Page v1.0 -->
+<!-- HTML Version: 1.0 | Last Updated: 2026-05-04 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonaym - Privacy-first DNS Appliance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* NONAYM BRAND — Green accent palette
+               Primary green: #A5F20A (neon lime from logo)
+               Darker: #7CCB00 (shadows/depth)
+               Lighter: #C8FF2A (highlights)
+               Swap logo: replace assets/logo.png in this folder */
+            --green-primary: #A5F20A;
+            --green-dark: #7CCB00;
+            --green-light: #C8FF2A;
+            --green-glow: rgba(165, 242, 10, 0.3);
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1419;
+            color: #c8d0dc;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        header img {
+            height: 40px;
+            filter: brightness(0.9);
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #c8d0dc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--green-primary);
+        }
+        .cta-button {
+            padding: 10px 20px;
+            border-radius: 9999px;
+            border: 2px solid var(--green-primary);
+            background: transparent;
+            color: var(--green-primary);
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            background: var(--green-primary);
+            color: #0a1520;
+            box-shadow: 0 0 15px var(--green-glow);
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-logo {
+            max-width: 280px;
+            margin-bottom: 20px;
+            filter: brightness(0.95) drop-shadow(0 0 8px var(--green-glow));
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #8090a8;
+            margin: 10px 0 30px;
+        }
+        .hero .cta-button-primary {
+            background: linear-gradient(90deg, var(--green-primary), var(--green-dark));
+            color: #0a1520;
+            border: none;
+            margin-left: 10px;
+        }
+        .hero .cta-button-primary:hover {
+            box-shadow: 0 0 20px var(--green-glow);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--green-primary);
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #8090a8;
+        }
+        .card {
+            background-color: #171c27;
+            border: 1px solid #1f2838;
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--green-primary);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #8090a8;
+        }
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .pricing-card {
+            background-color: #171c27;
+            border: 1px solid #1f2838;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: border-color 0.3s;
+        }
+        .pricing-card:hover {
+            border-color: var(--green-primary);
+        }
+        .pricing-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            color: #8090a8;
+        }
+        footer {
+            background-color: #13181f;
+            padding: 20px;
+            text-align: center;
+            color: #c8d0dc;
+        }
+        footer a {
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--green-light);
+        }
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- SWAP LOGO: logo v3.0 — replace logo.png to change the logo -->
+        <img src="./assets/logo.png" alt="Nonaym">
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="#about">&nbsp;</a>
+            <button class="cta-button">Pre-Order</button>
+        </nav>
+    </header>
+    <section class="hero">
+        <!-- SWAP LOGO: logo v3.0 — replace logo.png to change the hero logo -->
+        <img src="./assets/logo.png" alt="Nonaym" class="hero-logo">
+        <h1>Your smart home is telling on you.</h1>
+        <p>Every connected device leaves clues about your life — what you watch, when you're home, when you're away, and what your family cares about. no naym helps keep that profile from being built so easily.</p>
+        <div>
+            <button class="cta-button">See How It Works</button>
+            <button class="cta-button cta-button-primary">Pre-Order - Coming Soon</button>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+    <section class="section" id="problem">
+        <h2>Your WiFi router is selling your secrets.</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>247</h3>
+                <p>Average trackers per website</p>
+            </div>
+            <div class="card">
+                <h3>83%</h3>
+                <p>Of smart devices phone home daily</p>
+            </div>
+            <div class="card">
+                <h3>$14.4B</h3>
+                <p>Data broker industry revenue</p>
+            </div>
+        </div>
+        <p>Every day, your home network is being exploited by data brokers and advertisers. Nonaym puts an end to this by blocking trackers and keeping your data private.</p>
+    </section>
+    <section class="section" id="how-it-works">
+        <h2>Setup in 30 seconds. Privacy forever.</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Plug It In</h3>
+                <p>Connect to your router with zero configuration needed.</p>
+            </div>
+            <div class="card">
+                <h3>Block Everything</h3>
+                <p>Ads, trackers, and malware are blocked at the network level.</p>
+            </div>
+            <div class="card">
+                <h3>Hide Your Trail</h3>
+                <p>Your home data stays home, away from prying eyes.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="product-comparison">
+        <h2>Choose Your Level of Anonymity</h2>
+        <div class="grid grid-2">
+            <div class="pricing-card">
+                <h3>Nonaym Lite $80-150</h3>
+                <ul>
+                    <li>Technitium DNS</li>
+                    <li>Ad/Tracker Blocking</li>
+                    <li>Malware Protection</li>
+                    <li>Blocklist Management</li>
+                    <li>Dashboard & Logging</li>
+                    <li>TV Display</li>
+                    <li>Plug & Play</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Nonaym AI $250-500</h3>
+                <ul>
+                    <li>Everything in Lite</li>
+                    <li>ClamAV</li>
+                    <li>Local AI Model</li>
+                    <li>Device Behavior Analysis</li>
+                    <li>Anomaly Detection</li>
+                    <li>Automated Threat Response</li>
+                    <li>Custom Blocklists</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="features">
+        <h2>Features</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Ad & Tracker Blocking</h3>
+                <p>Eliminate unwanted ads and trackers from your network.</p>
+            </div>
+            <div class="card">
+                <h3>Malware Protection</h3>
+                <p>Protect your devices from malicious threats.</p>
+            </div>
+            <div class="card">
+                <h3>Privacy Dashboard</h3>
+                <p>Monitor and manage your network privacy settings.</p>
+            </div>
+            <div class="card">
+                <h3>Local AI Insights</h3>
+                <p>Gain insights into your network's behavior with AI.</p>
+            </div>
+            <div class="card">
+                <h3>TV-Mountable Design</h3>
+                <p>Compact design that fits seamlessly into your home.</p>
+            </div>
+            <div class="card">
+                <h3>Plug & Play</h3>
+                <p>Easy setup with no technical knowledge required.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="pricing">
+        <h2>Simple Pricing. Real Privacy.</h2>
+        <div class="grid grid-2">
+            <div class="pricing-card">
+                <h3>Nonaym Lite</h3>
+                <p>Starting at $80</p>
+                <ul>
+                    <li>Technitium DNS</li>
+                    <li>Ad/Tracker Blocking</li>
+                    <li>Malware Protection</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Nonaym AI</h3>
+                <p>Starting at $250</p>
+                <ul>
+                    <li>Local AI Model</li>
+                    <li>Device Behavior Analysis</li>
+                    <li>Anomaly Detection</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Your smart home is telling on you.</p>
+        <a href="https://nonaym.ai">Nonaym.ai</a>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

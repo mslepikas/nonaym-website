@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Nonaym About Page v3.0 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonaym — About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #13181f;
+            --bg-card: #171c27;
+            --green-primary: #A5F20A;
+            --green-dark: #7CCB00;
+            --green-light: #C8FF2A;
+            --green-glow: rgba(165, 242, 10, 0.3);
+            --text: #c8d0dc;
+            --text-muted: #8090a8;
+            --border: #1f2838;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15,20,25,0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            z-index: 1000;
+        }
+        header img { height: 40px; }
+        nav { display: flex; gap: 24px; align-items: center; }
+        nav a {
+            color: #b0bcd0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--green-primary); }
+        .cta-button {
+            padding: 8px 20px;
+            border-radius: 9999px;
+            border: 2px solid var(--green-primary);
+            background: transparent;
+            color: var(--green-primary);
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { background: var(--green-primary); color: #0a1520; box-shadow: 0 0 15px var(--green-glow); }
+        
+        /* About page layout */
+        .about-container {
+            max-width: 800px;
+            margin: 100px auto 60px;
+            padding: 0 30px;
+        }
+        .about-container h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            color: var(--text);
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .about-container h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-top: 50px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        .about-container h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: var(--green-primary);
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+        .about-container p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        .about-container ul {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-left: 20px;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+        .about-container li { margin-bottom: 8px; }
+        .about-container a {
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .about-container a:hover { color: var(--green-light); text-decoration: underline; }
+        .divider {
+            border: none;
+            height: 1px;
+            background: var(--border);
+            margin: 50px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 30px;
+            color: var(--text-muted);
+            font-size: 15px;
+            border-top: 1px solid var(--border);
+        }
+        .footer p { margin-bottom: 8px; }
+        @media (max-width: 768px) {
+            .about-container h1 { font-size: 2rem; }
+            .about-container h2 { font-size: 1.4rem; }
+            .about-container { padding: 0 20px; margin-top: 80px; }
+            header { padding: 12px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- SWAP LOGO: logo v3.0 � replace assets/logo.png in this folder -->
+        <img src="./assets/logo.png" alt="Nonaym">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#pricing">Pricing</a>
+            <button class="cta-button">Pre-Order</button>
+        </nav>
+    </header>
+    
+    <div class="about-container">
+        <h1>About Nonaym</h1>
+        
+        <h3>Why Nonaym Exists</h3>
+        <p>Ever wondered why your internet service has gotten faster, pricier, and suspiciously more personalized over the years?</p>
+        <p>It's not an accident. It's a business model.</p>
+        
+        <h3>Your Internet Is Measuring Everything</h3>
+        <p>Your internet is timestamping and measuring every pattern of your smart home. Not metaphorically — literally. Your ISP sees the exact millisecond you turn on your TV, what channel you watch, how long you watch it. Your router logs every DNS query from every device in your house. Your smart appliances report back to their servers like clockwork. Your streaming devices build viewing profiles. Your smart speakers process voice data. Your baby monitors transmit video metadata.</p>
+        <p>All of this data is timestamped, correlated, and stitched together into profiles. Profiles that are sold to data brokers, advertisers, and third parties you've never heard of. Profiles that are used to predict your behavior, manipulate your choices, and raise the price you pay for everything from insurance to electricity.</p>
+        
+        <h3>The Problem Nobody Talks About</h3>
+        <p>Your home network is the most surveilled place in your life.</p>
+        <p>Your TV watches what you watch. Your phone tracks where you go. Your router logs every domain you visit. Your smart speaker records "accidental" wake words. Your baby monitor sees your children sleep. Your fitness tracker maps your daily routine. Your smart thermostat learns when you're home and when you leave.</p>
+        <p>None of this data belongs to advertisers. None of it should be a commodity.</p>
+        
+        <h3>Do The Math</h3>
+        <p>Here's a simple exercise in common sense:</p>
+        <p>Let's say you have a smart TV, a phone, a tablet, two laptops, a smart speaker, a baby monitor, a fitness tracker, and a smart thermostat. That's eight devices. Each one makes thousands of DNS queries per day — looking up content, advertising networks, analytics services, API endpoints, software updates. Let's say 3,000 queries per device per day. Multiply by eight devices. That's 24,000 DNS lookups from your home every single day.</p>
+        <p>Now let's say each device generates another 500 data points from app calls — what you click, what you search, what you watch, where you go, who you call, what you buy, what you read. Five hundred times eight devices. That's 4,000 more data points daily. Add the router itself, which logs every packet header. Add the ISP, which logs everything in transit.</p>
+        <p>Over a year, that's roughly 8 million data points about your household. 2.9 billion data points over three years.</p>
+        <p>None of those numbers are exaggerated. A single smart TV in a typical home can generate more DNS queries per week than the average person has contacts in their phone.</p>
+        
+        <h3>Anonymous Doesn't Mean Private</h3>
+        <p>Here's where common sense kicks in. Every data company will tell you their telemetry is "anonymized." They strip the name. They strip the email. They strip the home address. They call it "anonymized."</p>
+        <p>But here's what happens when you stitch together 8 million data points per year from a single household:</p>
+        <p>They know exactly what time your kids wake up on weekdays. They know which bedroom gets the most streaming at night. They know your teenager's search history because the family tablet doesn't lie. They know when you go on vacation because your router stops sending data. They know your grocery habits because your smart fridge orders milk and your phone shows you walked to the farmer's market three days later. They know your sleep schedule because your fitness tracker and your smart thermostat correlate perfectly.</p>
+        <p>Anonymized telemetry doesn't stay anonymized. It becomes a portrait. A detailed portrait. Of you. Of your family. Of your life.</p>
+        <p>The question isn't whether they have your data. The question is who else does.</p>
+        
+        <h3>What We Built</h3>
+        <p>Nonaym is a physical privacy appliance — not an app, not a subscription, not a "set and forget" plugin that your ISP can override.</p>
+        <p>It's a hardware device you plug into your home. From the moment it's connected, every tracker, ad network, and data broker in your network is blocked at the DNS level — before any of your devices even tries to reach them.</p>
+        <p>No configuration. No technical knowledge. Just privacy.</p>
+        
+        <hr class="divider">
+        
+        <h3>The Name</h3>
+        <p><strong>"nonaym"</strong> is intentional. We wanted a name that sounds like "anonymous" without being obvious about it. A name that doesn't scream privacy paranoia — one that feels like a premium product you'd proudly display in your home.</p>
+        <p>The "non" prefix signals negation. The "aym" suffix gives it weight. Together, they feel like a brand, not a manifesto.</p>
+        
+        <h3>Our Philosophy</h3>
+        <ul>
+            <li><strong>Privacy by default, not by opt-in.</strong> You shouldn't have to fight to keep your data private.</li>
+            <li><strong>Hardware over software.</strong> Apps can be bypassed. A network-level appliance can't.</li>
+            <li><strong>No subscriptions, ever.</strong> You buy the device. It works. That's it.</li>
+            <li><strong>Open where it matters.</strong> The blocking lists we use are open-source. The principles behind it are public.</li>
+        </ul>
+        
+        <h3>What We're Building</h3>
+        <p>Two product tiers, one mission:</p>
+        <ul>
+            <li><strong>Nonaym Lite</strong> — for everyone. Block trackers, ads, and malware. $80-150. No tech degree required.</li>
+            <li><strong>Nonaym AI</strong> — for those who want intelligence, not just a wall. Local AI analyzes your network patterns and alerts you to what doesn't belong. $250-500.</li>
+        </ul>
+        
+        <h3>The Team</h3>
+        <p>We're a small team of engineers, privacy advocates, and people who are tired of pretending that "terms of service" protect our data.</p>
+        <p>We've worked in cybersecurity, networking, and consumer tech. We've seen how the data economy works from the inside. We're building Nonaym because the alternative — letting every connected device in our homes become a reporting station for corporations — is unacceptable.</p>
+        
+        <h3>Built With</h3>
+        <ul>
+            <li>Technitium DNS Server (open-source DNS blocking)</li>
+            <li>Custom blocklist aggregation</li>
+            <li>Local AI inference (Nonaym AI tier)</li>
+            <li>Designed for physical deployment — TV-mountable, HDMI output, Firestick-sized</li>
+        </ul>
+        
+        <hr class="divider">
+        
+        <h3>Get In Touch</h3>
+        <p>For partnerships, press, or questions:<br>
+        <a href="mailto:contact@nonaym.ai">contact@nonaym.ai</a></p>
+    </div>
+    
+    <div class="footer">
+        <p>Nonaym.ai — Your smart home is telling on you. We help it stay quiet.</p>
+    </div>
+</body>
+</html>
