@@ -212,6 +212,35 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 720px;
+            margin: 2rem auto 0;
+            text-align: left;
+        }
+        .contact-form label {
+            display: grid;
+            gap: 0.4rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-light);
+            padding: 0.85rem 1rem;
+            font: inherit;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+
     </style>
 </head>
 <body>
@@ -224,7 +253,7 @@
             <a href="#pricing">Pricing</a>
             <a href="about.html">About</a>
             <a href="#about">&nbsp;</a>
-            <button class="cta-button">Pre-Order</button>
+            <a class="cta-button" href="#contact">Request info</a>
         </nav>
     </header>
     <section class="hero">
@@ -233,8 +262,8 @@
         <h1>Your smart home is telling on you.</h1>
         <p>Every connected device leaves clues about your life — what you watch, when you're home, when you're away, and what your family cares about. no naym helps keep that profile from being built so easily.</p>
         <div>
-            <button class="cta-button">See How It Works</button>
-            <button class="cta-button cta-button-primary">Pre-Order - Coming Soon</button>
+            <a class="cta-button" href="#how-it-works">See How It Works</a>
+            <a class="cta-button cta-button-primary" href="#contact">Join the waitlist</a>
         </div>
         <div class="scroll-indicator"></div>
     </section>
@@ -274,30 +303,35 @@
         </div>
     </section>
     <section class="section" id="product-comparison">
-        <h2>Choose Your Level of Anonymity</h2>
-        <div class="grid grid-2">
+        <h2>Choose Your Nonaym</h2>
+        <div class="grid grid-3">
             <div class="pricing-card">
-                <h3>Nonaym Lite $80-150</h3>
+                <h3>Nonaym DIY — TBD</h3>
                 <ul>
-                    <li>Technitium DNS</li>
-                    <li>Ad/Tracker Blocking</li>
-                    <li>Malware Protection</li>
-                    <li>Blocklist Management</li>
-                    <li>Dashboard & Logging</li>
-                    <li>TV Display</li>
-                    <li>Plug & Play</li>
+                    <li>Use an old computer you already have</li>
+                    <li>Download the setup package</li>
+                    <li>Turn it into a home privacy box</li>
+                    <li>Best for hands-on users</li>
                 </ul>
             </div>
             <div class="pricing-card">
-                <h3>Nonaym AI $250-500</h3>
+                <h3>Nonaym Lite — TBD</h3>
                 <ul>
-                    <li>Everything in Lite</li>
-                    <li>ClamAV</li>
-                    <li>Local AI Model</li>
-                    <li>Device Behavior Analysis</li>
-                    <li>Anomaly Detection</li>
-                    <li>Automated Threat Response</li>
-                    <li>Custom Blocklists</li>
+                    <li>Small plug-in privacy box</li>
+                    <li>Less tracking and cleaner browsing</li>
+                    <li>No network skills required</li>
+                    <li>Simple home dashboard</li>
+                    <li>Plug in and start protected</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Nonaym AI — TBD</h3>
+                <ul>
+                    <li>Coming later</li>
+                    <li>Local AI privacy computer</li>
+                    <li>Explains your network in plain English</li>
+                    <li>Helps you choose what to block</li>
+                    <li>Built for deeper home insight</li>
                 </ul>
             </div>
         </div>
@@ -332,28 +366,61 @@
         </div>
     </section>
     <section class="section" id="pricing">
-        <h2>Simple Pricing. Real Privacy.</h2>
-        <div class="grid grid-2">
+        <h2>Simple pricing, coming soon</h2>
+        <div class="grid grid-3">
             <div class="pricing-card">
-                <h3>Nonaym Lite</h3>
-                <p>Starting at $80</p>
-                <ul>
-                    <li>Technitium DNS</li>
-                    <li>Ad/Tracker Blocking</li>
-                    <li>Malware Protection</li>
-                </ul>
+                <h3>Nonaym DIY — TBD</h3>
+                <p>Downloadable setup package for an old computer you already have.</p>
             </div>
             <div class="pricing-card">
-                <h3>Nonaym AI</h3>
-                <p>Starting at $250</p>
-                <ul>
-                    <li>Local AI Model</li>
-                    <li>Device Behavior Analysis</li>
-                    <li>Anomaly Detection</li>
-                </ul>
+                <h3>Nonaym Lite — TBD</h3>
+                <p>A small plug-in privacy box for cleaner browsing and less tracking.</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Nonaym AI — TBD</h3>
+                <p>Coming later: a local AI privacy computer that explains your home network in plain English.</p>
             </div>
         </div>
     </section>
+
+    <section class="section" id="contact">
+        <h2>Join the Nonaym waitlist</h2>
+        <p>
+            Tell us what you are interested in. We will use this to follow up
+            about DIY downloads, Nonaym Lite appliances, and the future Nonaym AI system.
+        </p>
+
+        <form class="contact-form" action="/api/leads" method="post">
+            <label>
+                Name
+                <input type="text" name="name" autocomplete="name" required>
+            </label>
+
+            <label>
+                Email
+                <input type="email" name="email" autocomplete="email" required>
+            </label>
+
+            <label>
+                Interested in
+                <select name="interest" required>
+                    <option value="">Choose one</option>
+                    <option value="nonaym-diy">Nonaym DIY</option>
+                    <option value="nonaym-lite">Nonaym Lite</option>
+                    <option value="nonaym-ai">Nonaym AI</option>
+                    <option value="not-sure">Not sure yet</option>
+                </select>
+            </label>
+
+            <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us what you want Nonaym to do for your home."></textarea>
+            </label>
+
+            <button class="cta-button cta-button-primary" type="submit">Send request</button>
+        </form>
+    </section>
+
     <footer>
         <p>Your smart home is telling on you.</p>
         <a href="https://nonaym.ai">Nonaym.ai</a>
