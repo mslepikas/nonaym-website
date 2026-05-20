@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" width="1254" height="1254">
+  <defs>
+    <linearGradient id="maskGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a9b52;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="1254" height="1254" fill="#0d1117"/>
+
+  <!-- Central icon: elegant theater/anonymous mask shape -->
+  <g transform="translate(627, 420)" filter="url(#softShadow)">
+    <!-- Mask silhouette - classic Venetian half-mask / Anonymous mask curve -->
+    <path d="
+      M -140,-30
+      C -140,-90 -100,-120 -45,-125
+      C -25,-127 -8,-115 0,-95
+      C 8,-115 25,-127 45,-125
+      C 100,-120 140,-90 140,-30
+      C 140,15 115,50 80,65
+      C 55,75 30,80 0,82
+      C -30,80 -55,75 -80,65
+      C -115,50 -140,15 -140,-30
+      Z
+    " fill="url(#maskGrad)" stroke="none"/>
+
+    <!-- Inner mask accent line -->
+    <path d="
+      M -125,-25
+      C -125,-78 -90,-105 -42,-110
+      C -24,-112 -10,-102 0,-84
+      C 10,-102 24,-112 42,-110
+      C 90,-105 125,-78 125,-25
+      C 125,12 102,45 70,58
+      C 48,68 26,73 0,75
+      C -26,73 -48,68 -70,58
+      C -102,45 -125,12 -125,-25
+      Z
+    " fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+
+    <!-- Left eye cutout -->
+    <ellipse cx="-50" cy="-15" rx="38" ry="22" fill="#0d1117"/>
+    <!-- Right eye cutout -->
+    <ellipse cx="50" cy="-15" rx="38" ry="22" fill="#0d1117"/>
+    <!-- Bridge connecting the eyes -->
+    <path d="M -15,-15 Q 0,-7 15,-15" fill="none" stroke="#0d1117" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Eye pupils -->
+    <circle cx="-50" cy="-15" r="6" fill="#2ecc71" opacity="0.9"/>
+    <circle cx="50" cy="-15" r="6" fill="#2ecc71" opacity="0.9"/>
+
+    <!-- Subtle cheek line accent (left) -->
+    <path d="M -85,-30 C -90,-10 -80,10 -65,20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Subtle cheek line accent (right) -->
+    <path d="M 85,-30 C 90,-10 80,10 65,20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- "no" in bright green -->
+  <text x="537" y="760" font-family="'Inter', 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="130" font-weight="700" fill="#2ecc71" letter-spacing="-2">no</text>
+
+  <!-- "naym" in bright white -->
+  <text x="677" y="760" font-family="'Inter', 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="130" font-weight="700" fill="#e8edf2" letter-spacing="-2">naym</text>
+
+  <!-- Divider dot -->
+  <circle cx="630" cy="730" r="6" fill="#3a4a5c" opacity="0.7"/>
+
+  <!-- Tagline -->
+  <text x="627" y="840" font-family="'Inter', 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="28" font-weight="400" fill="#8899a6" letter-spacing="8" text-anchor="middle">PRIVACY FIRST DNS</text>
+
+  <!-- Bottom accent line -->
+  <line x1="527" y1="870" x2="727" y2="870" stroke="#2ecc71" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+</svg>
