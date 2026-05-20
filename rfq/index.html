@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Nonaym RFQ Page v1.0 -->
+<!-- HTML Version: 1.2.1-build001 | Last Updated: 2026-05-20 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonaym RFQ - Request for Quotation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* NONAYM BRAND — Green accent palette
+               Primary green: #A5F20A (neon lime from logo)
+               Darker: #7CCB00 (shadows/depth)
+               Lighter: #C8FF2A (highlights)
+               Swap logo: replace logo.png in the site root */
+            --green-primary: #A5F20A;
+            --green-dark: #7CCB00;
+            --green-light: #C8FF2A;
+            --green-glow: rgba(165, 242, 10, 0.3);
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1419;
+            color: #c8d0dc;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        header img {
+            height: 40px;
+            filter: brightness(0.9);
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #c8d0dc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--green-primary);
+        }
+        .cta-button {
+            padding: 10px 20px;
+            border-radius: 9999px;
+            border: 2px solid var(--green-primary);
+            background: transparent;
+            color: var(--green-primary);
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            background: var(--green-primary);
+            color: #0a1520;
+            box-shadow: 0 0 15px var(--green-glow);
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #111827 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-logo {
+            max-width: 280px;
+            margin-bottom: 20px;
+            filter: brightness(0.95) drop-shadow(0 0 8px var(--green-glow));
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #8090a8;
+            margin: 10px 0 30px;
+        }
+        .hero .cta-button-primary {
+            background: linear-gradient(90deg, var(--green-primary), var(--green-dark));
+            color: #0a1520;
+            border: none;
+            margin-left: 10px;
+        }
+        .hero .cta-button-primary:hover {
+            box-shadow: 0 0 20px var(--green-glow);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--green-primary);
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #8090a8;
+        }
+        .card {
+            background-color: #171c27;
+            border: 1px solid #1f2838;
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--green-primary);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #8090a8;
+        }
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .pricing-card {
+            background-color: #171c27;
+            border: 1px solid #1f2838;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: border-color 0.3s;
+        }
+        .pricing-card:hover {
+            border-color: var(--green-primary);
+        }
+        .pricing-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            color: #8090a8;
+        }
+        footer {
+            background-color: #13181f;
+            padding: 20px;
+            text-align: center;
+            color: #c8d0dc;
+        }
+        footer a {
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--green-light);
+        }
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 720px;
+            margin: 2rem auto 0;
+            text-align: left;
+        }
+        .contact-form label {
+            display: grid;
+            gap: 0.4rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-light);
+            padding: 0.85rem 1rem;
+            font: inherit;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- SWAP LOGO: logo v3.0 — replace logo.png to change the logo -->
+        <img src="../logo.png" alt="Nonaym">
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#products">Products</a>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../rfq/index.html">RFQ</a>
+            <a href="../download/index.html">Download</a>
+            <a class="cta-button" href="../index.html#contact">Join waitlist</a>
+        </nav>
+    </header>
+    <section class="section" id="rfq">
+        <h2>Request for Quotation</h2>
+        <p>
+            We welcome inquiries about how Nonaym products can help your organization
+            achieve privacy-focused networking and security. Whether you're a small
+            business, educational setting, or enterprise, we're interested in how
+            we might support your needs.
+        </p>
+        
+        <h3>Organization Information</h3>
+        <p>
+            To help us better serve your needs, please provide the following information:
+        </p>
+        
+        <ul>
+            <li>Organization name (if applicable)</li>
+            <li>Contact name and email</li>
+            <li>Number of locations or devices to consider</li>
+            <li>Current networking setup (if available)</li>
+        </ul>
+        
+        <h3>Product Interest</h3>
+        <p>
+            Please let us know which Nonaym products you're interested in learning more about:
+        </p>
+        
+        <ul>
+            <li>Nonaym DIY (for technical users who want to set it up themselves)</li>
+            <li>Nonaym Lite (plug-in appliance for everyday privacy needs)</li>
+            <li>Nonaym AI (for more advanced insights and AI capabilities)</li>
+        </ul>
+        
+        <h3>Technical Requirements</h3>
+        <p>
+            For better understanding, let us know your technical requirements:
+        </p>
+        
+        <ul>
+            <li>Environment type (home, small office, enterprise)</li>
+            <li>Current availability of old computers for DIY installation (if applicable)</li>
+            <li>Required privacy features</li>
+        </ul>
+        
+        <h3>Contact Form</h3>
+        <p>
+            Please fill out the form below to submit your request. While we don't 
+            collect sensitive data, we'll use this information to provide an appropriate 
+            response:
+        </p>
+        
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — online request processing is being prepared. Please email contact@nonaym.ai after the inbox is verified.');">
+            <label>
+                Name
+                <input type="text" name="name" autocomplete="name" required>
+            </label>
+
+            <label>
+                Email
+                <input type="email" name="email" autocomplete="email" required>
+            </label>
+
+            <label>
+                Organization (if applicable)
+                <input type="text" name="organization" autocomplete="organization">
+            </label>
+
+            <label>
+                Product Interest
+                <select name="interest" required>
+                    <option value="">Choose one</option>
+                    <option value="nonaym-diy">Nonaym DIY</option>
+                    <option value="nonaym-lite">Nonaym Lite</option>
+                    <option value="nonaym-ai">Nonaym AI</option>
+                    <option value="not-sure">Not sure yet</option>
+                </select>
+            </label>
+
+            <label>
+                Location/Device Count
+                <input type="text" name="locations" placeholder="Number of locations or devices">
+            </label>
+
+            <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us about your organization and requirements."></textarea>
+            </label>
+
+            <button class="cta-button cta-button-primary" type="submit">Submit Request</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>Your smart home is telling on you.</p>
+        <a href="https://nonaym.ai">Nonaym.ai</a>
+    </footer>
+</body>
+</html>

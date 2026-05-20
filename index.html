@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Nonaym Landing Page v1.0 -->
-<!-- HTML Version: 1.0 | Last Updated: 2026-05-04 -->
+<!-- HTML Version: 1.2.1-build001 | Last Updated: 2026-05-20 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
                Primary green: #A5F20A (neon lime from logo)
                Darker: #7CCB00 (shadows/depth)
                Lighter: #C8FF2A (highlights)
-               Swap logo: replace assets/logo.png in this folder */
+               Swap logo: replace logo.png in the site root */
             --green-primary: #A5F20A;
             --green-dark: #7CCB00;
             --green-light: #C8FF2A;
@@ -246,19 +246,21 @@
 <body>
     <header>
         <!-- SWAP LOGO: logo v3.0 — replace logo.png to change the logo -->
-        <img src="./assets/logo.png" alt="Nonaym">
+        <img src="./logo.png" alt="Nonaym">
         <nav>
             <a href="#products">Products</a>
             <a href="#features">Features</a>
             <a href="#pricing">Pricing</a>
             <a href="about.html">About</a>
-            <a href="#about">&nbsp;</a>
-            <a class="cta-button" href="#contact">Request info</a>
+            <a href="contact/index.html">Contact</a>
+            <a href="rfq/index.html">RFQ</a>
+            <a href="download/index.html">Download</a>
+            <a class="cta-button" href="#contact">Join waitlist</a>
         </nav>
     </header>
     <section class="hero">
         <!-- SWAP LOGO: logo v3.0 — replace logo.png to change the hero logo -->
-        <img src="./assets/logo.png" alt="Nonaym" class="hero-logo">
+        <img src="./logo.png" alt="Nonaym" class="hero-logo">
         <h1>Your smart home is telling on you.</h1>
         <p>Every connected device leaves clues about your life — what you watch, when you're home, when you're away, and what your family cares about. no naym helps keep that profile from being built so easily.</p>
         <div>
@@ -285,7 +287,45 @@
         </div>
         <p>Every day, your home network is being exploited by data brokers and advertisers. Nonaym puts an end to this by blocking trackers and keeping your data private.</p>
     </section>
-    <section class="section" id="how-it-works">
+
+    <section class="section" id="product-paths">
+      <div class="section-heading">
+        <p class="eyebrow">Choose your path</p>
+        <h2>Three ways to get cleaner, more private home internet.</h2>
+        <p>
+          Start with what fits you today. Nonaym can be a do-it-yourself setup,
+          a small plug-in privacy box, or later a local AI privacy computer.
+        </p>
+      </div>
+
+      <div class="cards three">
+        <article class="card">
+          <h3>Nonaym DIY — Coming Soon</h3>
+          <p>
+            Use an old computer you already have. Download the setup package
+            and turn it into a home privacy box.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Nonaym Lite — In Planning</h3>
+          <p>
+            A small plug-in privacy box for people who want less tracking and
+            cleaner browsing without learning network settings.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Nonaym AI — Later This Year</h3>
+          <p>
+            Coming later. A local AI privacy computer that explains what your
+            network is doing in plain English and helps you choose what to block.
+          </p>
+        </article>
+      </div>
+    </section>
+
+<section class="section" id="how-it-works">
         <h2>Setup in 30 seconds. Privacy forever.</h2>
         <div class="grid grid-3">
             <div class="card">
@@ -306,7 +346,7 @@
         <h2>Choose Your Nonaym</h2>
         <div class="grid grid-3">
             <div class="pricing-card">
-                <h3>Nonaym DIY — TBD</h3>
+                <h3>Nonaym DIY — Coming Soon</h3>
                 <ul>
                     <li>Use an old computer you already have</li>
                     <li>Download the setup package</li>
@@ -315,7 +355,7 @@
                 </ul>
             </div>
             <div class="pricing-card">
-                <h3>Nonaym Lite — TBD</h3>
+                <h3>Nonaym Lite — In Planning</h3>
                 <ul>
                     <li>Small plug-in privacy box</li>
                     <li>Less tracking and cleaner browsing</li>
@@ -325,7 +365,7 @@
                 </ul>
             </div>
             <div class="pricing-card">
-                <h3>Nonaym AI — TBD</h3>
+                <h3>Nonaym AI — Later This Year</h3>
                 <ul>
                     <li>Coming later</li>
                     <li>Local AI privacy computer</li>
@@ -366,19 +406,25 @@
         </div>
     </section>
     <section class="section" id="pricing">
-        <h2>Simple pricing, coming soon</h2>
-        <div class="grid grid-3">
+        <h2>Simple Pricing. Real Privacy.</h2>
+        <div class="grid grid-2">
             <div class="pricing-card">
-                <h3>Nonaym DIY — TBD</h3>
-                <p>Downloadable setup package for an old computer you already have.</p>
+                <h3>Nonaym Lite — In Planning</h3>
+                <p>Pricing will be announced when this product is ready.</p>
+                <ul>
+                    <li>Technitium DNS</li>
+                    <li>Ad/Tracker Blocking</li>
+                    <li>Malware Protection</li>
+                </ul>
             </div>
             <div class="pricing-card">
-                <h3>Nonaym Lite — TBD</h3>
-                <p>A small plug-in privacy box for cleaner browsing and less tracking.</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Nonaym AI — TBD</h3>
-                <p>Coming later: a local AI privacy computer that explains your home network in plain English.</p>
+                <h3>Nonaym AI — Later This Year</h3>
+                <p>Pricing will be announced when this product is ready.</p>
+                <ul>
+                    <li>Local AI Model</li>
+                    <li>Device Behavior Analysis</li>
+                    <li>Anomaly Detection</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -390,7 +436,7 @@
             about DIY downloads, Nonaym Lite appliances, and the future Nonaym AI system.
         </p>
 
-        <form class="contact-form" action="/api/leads" method="post">
+        <form class="contact-form">
             <label>
                 Name
                 <input type="text" name="name" autocomplete="name" required>
@@ -421,7 +467,7 @@
         </form>
     </section>
 
-    <footer>
+<footer>
         <p>Your smart home is telling on you.</p>
         <a href="https://nonaym.ai">Nonaym.ai</a>
     </footer>
