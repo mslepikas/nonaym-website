@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- HTML Version: 1.2.2-build001 | Last Updated: 2026-05-21 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Not To Send - Nonaym</title>
+  <style>
+    :root {
+      --bg: #050805;
+      --card: #101610;
+      --text: #f4f7f4;
+      --muted: #b9c3b9;
+      --accent: #A5F20A;
+      --border: rgba(165, 242, 10, 0.25);
+      --warning: #ffcc66;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: #070b07;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 54px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a, a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover, a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 34px;
+    }
+
+    h3 {
+      margin-top: 24px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .warning {
+      border-left: 4px solid var(--warning);
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .safe {
+      border-color: rgba(165, 242, 10, 0.35);
+    }
+
+    .unsafe {
+      border-color: rgba(255, 204, 102, 0.35);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html"><img src="../logo.png" alt="Nonaym"></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../contact/">Contact</a>
+      <a href="../rfq/">RFQ</a>
+      <a href="../download/">Download</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>What Not To Send</h1>
+    <p class="muted">Simple safety guidance for early Nonaym customer contact.</p>
+
+    <div class="card warning">
+      <p><strong>Important:</strong> Please do not send sensitive network, payment, password, or private setup information through email or website forms.</p>
+    </div>
+
+    <section class="card">
+      <h2>What You Can Safely Send</h2>
+      <p>For early questions, waitlist interest, or product planning, keep your message simple.</p>
+
+      <div class="grid">
+        <div class="card safe">
+          <h3>Okay to include</h3>
+          <ul>
+            <li>Your name</li>
+            <li>Your email address</li>
+            <li>General product interest</li>
+            <li>Whether you are interested in DIY, Lite, or future AI</li>
+            <li>General questions</li>
+            <li>High-level use case, such as home or small office</li>
+          </ul>
+        </div>
+
+        <div class="card safe">
+          <h3>Helpful examples</h3>
+          <ul>
+            <li>“I am interested in Nonaym DIY.”</li>
+            <li>“I want to know when Nonaym Lite is available.”</li>
+            <li>“I have an old desktop and want to know if it might work.”</li>
+            <li>“I want updates about the future Nonaym AI version.”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Do Not Send Sensitive Information</h2>
+      <p>Nonaym does not need these details during early contact. If a future setup process requires more information, Nonaym will provide a safer approved process.</p>
+
+      <div class="grid">
+        <div class="card unsafe">
+          <h3>Passwords and credentials</h3>
+          <ul>
+            <li>Passwords</li>
+            <li>Router usernames or passwords</li>
+            <li>Wi-Fi passwords</li>
+            <li>Server credentials</li>
+            <li>API keys</li>
+            <li>Private keys</li>
+            <li>Infrastructure access tokens</li>
+          </ul>
+        </div>
+
+        <div class="card unsafe">
+          <h3>Network details</h3>
+          <ul>
+            <li>Public IP addresses</li>
+            <li>LAN or internal IP addresses</li>
+            <li>Private network diagrams</li>
+            <li>Firewall rules</li>
+            <li>DNS records</li>
+            <li>Router serial numbers</li>
+            <li>Private security details</li>
+          </ul>
+        </div>
+
+        <div class="card unsafe">
+          <h3>Payment and personal details</h3>
+          <ul>
+            <li>Credit card numbers</li>
+            <li>Payment information</li>
+            <li>Full home address</li>
+            <li>Banking information</li>
+            <li>Government ID numbers</li>
+          </ul>
+        </div>
+
+        <div class="card unsafe">
+          <h3>Service-specific details</h3>
+          <ul>
+            <li>Cloudflare tokens</li>
+            <li>Tailscale details</li>
+            <li>Okta details</li>
+            <li>CRM credentials</li>
+            <li>Admin dashboard credentials</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Why This Matters</h2>
+      <p>Nonaym is being built around privacy and safer home internet tools. The safest early contact path is to avoid sending sensitive information unless a specific secure process is available.</p>
+      <p>This protects you, protects your home network, and keeps Nonaym’s early support process simple.</p>
+    </section>
+
+    <section class="card">
+      <h2>Future Setup Support</h2>
+      <p>When Nonaym DIY or Nonaym Lite setup support becomes available, Nonaym may provide specific instructions for what information is needed.</p>
+      <p>Until then, do not send private network details or credentials by email or through placeholder forms.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nonaym.ai. Privacy-first home internet tools.</p>
+  </footer>
+</body>
+</html>
