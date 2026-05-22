@@ -309,47 +309,24 @@
             collect sensitive data, we'll use this information to provide an appropriate 
             response:
         </p>
-        
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — online request processing is being prepared. For now, please email contact@nonaym.ai for non-sensitive questions or product interest.');">
-            <label>
-                Name
-                <input type="text" name="name" autocomplete="name" required>
-            </label>
-
-            <label>
-                Email
-                <input type="email" name="email" autocomplete="email" required>
-            </label>
-
-            <label>
-                Organization (if applicable)
-                <input type="text" name="organization" autocomplete="organization">
-            </label>
-
-            <label>
-                Product Interest
-                <select name="interest" required>
-                    <option value="">Choose one</option>
-                    <option value="nonaym-diy">Nonaym DIY</option>
-                    <option value="nonaym-lite">Nonaym Lite</option>
-                    <option value="nonaym-ai">Nonaym AI</option>
-                    <option value="not-sure">Not sure yet</option>
-                </select>
-            </label>
-
-            <label>
-                Location/Device Count
-                <input type="text" name="locations" placeholder="Number of locations or devices">
-            </label>
-
-            <label>
-                Message
-                <textarea name="message" rows="5" placeholder="Tell us about your organization and requirements."></textarea>
-            </label>
-
-            <button class="cta-button cta-button-primary" type="submit">Submit Request</button>
-        </form>
-        <p class="muted">
+        <div class="contact-form">
+            <h3>Email Nonaym for RFQ Questions</h3>
+            <p>
+                Online RFQ processing is being prepared. For now, email
+                <a href="mailto:contact@nonaym.ai">contact@nonaym.ai</a>
+                for non-sensitive RFQ questions, product interest, or availability updates.
+            </p>
+            <p class="muted">
+                Please do not send passwords, router credentials, payment details, IP addresses,
+                serial numbers, or private network information.
+            </p>
+            <p class="muted">
+                Review our <a href="../security/index.html">Security</a> and
+                <a href="../privacy/index.html">Privacy Policy</a> pages before sending information.
+            </p>
+            <a class="cta-button cta-button-primary" href="mailto:contact@nonaym.ai?subject=Nonaym%20RFQ%20question">Email Nonaym</a>
+        </div>
+<p class="muted">
             Please do not send passwords, router credentials, payment details, IP addresses,
             or private network information. See our <a href="../security/index.html">Security</a>
             and <a href="../privacy/index.html">Privacy Policy</a> pages.
