@@ -6,7 +6,9 @@ Current sandbox build: v1.2.0-build001
 Next planned sandbox build: v1.2.0-build001
 Last approved/base commit: d2c31d5
 Deployment status: approved/current live site; v1.2.0-build001 in sandbox review, Cloudflare form backend not yet wired
-GitHub remote: git@github.com:mslepikas/nonaym-site.git
+Documentation correction note: production documentation was corrected to identify mslepikas/nonaym-website as the production repository. Lead capture, /api/leads, and Cloudflare backend wiring remain not approved unless handled in a separate reviewed phase.
+GitHub remote: git@github.com:mslepikas/nonaym-website.git
+Legacy/deprecated repo note: git@github.com:mslepikas/nonaym-site.git is not the current production repository unless Mark explicitly re-approves it.
 
 ## Versioning Convention
 

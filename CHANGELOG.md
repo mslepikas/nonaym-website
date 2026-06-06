@@ -1,5 +1,11 @@
 # nonaym.ai Changelog
 
+## Documentation correction — production repo clarification
+- Clarified that the current production repository is `git@github.com:mslepikas/nonaym-website.git`.
+- Clarified that `git@github.com:mslepikas/nonaym-site.git` is legacy/deprecated/non-production unless Mark explicitly re-approves it.
+- No code, form behavior, Cloudflare backend, /api/leads wiring, deployment, service, or cleanup changes were made.
+
+
 ## v1.2.0-build001 — Sandbox proposed
 - Add homepage section titled "Choose your path" for Nonaym DIY, Nonaym Lite, and future Nonaym AI.
 - Use plain consumer language and avoid DNS jargon.
